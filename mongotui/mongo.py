@@ -70,6 +70,37 @@ class MongoAdmin:
         except OperationFailure:
             return None
 
+    def list_indexes(self, db_name: str, collection: str) -> list[dict]:
+        return list(self.client[db_name][collection].list_indexes())
+
+    def create_index(self, db_name: str, collection: str, keys: list[tuple], unique: bool = False) -> str:
+        return self.client[db_name][collection].create_index(keys, unique=unique)
+
+    def create_search_index(self, db_name: str, collection: str, name: str, definition: dict) -> None:
+        self.client[db_name][collection].create_search_index(
+            {"name": name, "definition": definition}
+        )
+
+    def list_search_indexes(self, db_name: str, collection: str) -> list[dict]:
+        try:
+            return list(self.client[db_name][collection].list_search_indexes())
+        except Exception:
+            return []
+
+    def drop_search_index(self, db_name: str, collection: str, name: str) -> None:
+        self.client[db_name][collection].drop_search_index(name)
+
+    def drop_index(self, db_name: str, collection: str, index_name: str) -> None:
+        self.client[db_name][collection].drop_index(index_name)
+
+    def index_stats(self, db_name: str, collection: str) -> dict:
+        stats = self.client[db_name].command("collStats", collection)
+        return {
+            "totalIndexSize": stats.get("totalIndexSize", 0),
+            "indexSizes": stats.get("indexSizes", {}),
+            "nindexes": stats.get("nindexes", 0),
+        }
+
     def ping(self) -> bool:
         try:
             self.client.admin.command("ping")
