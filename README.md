@@ -1,5 +1,11 @@
 # MongoTUI
 
+[![PyPI](https://img.shields.io/pypi/v/mongotui)](https://pypi.org/project/mongotui/)
+[![Python](https://img.shields.io/pypi/pyversions/mongotui)](https://pypi.org/project/mongotui/)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![GitHub release](https://img.shields.io/github/v/release/DevOpsPack/mongotui)](https://github.com/DevOpsPack/mongotui/releases)
+[![Downloads](https://img.shields.io/pypi/dm/mongotui)](https://pypi.org/project/mongotui/)
+
 MongoTUI is a modern terminal user interface (TUI) for MongoDB administration.
 
 Built with Python, Textual, and PyMongo, MongoTUI provides a fast and secure way to manage MongoDB users, roles, and permissions directly from the terminal without exposing a web-based admin interface.
