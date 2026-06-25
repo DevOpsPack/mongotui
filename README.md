@@ -6,42 +6,112 @@
 [![GitHub release](https://img.shields.io/github/v/release/DevOpsPack/mongotui)](https://github.com/DevOpsPack/mongotui/releases)
 [![Downloads](https://img.shields.io/pypi/dm/mongotui)](https://pypi.org/project/mongotui/)
 
-MongoTUI is a modern terminal user interface (TUI) for MongoDB administration.
+A modern terminal user interface for MongoDB administration — like Compass, but for your terminal.
 
-Built with Python, Textual, and PyMongo, MongoTUI provides a fast and secure way to manage MongoDB users, roles, and permissions directly from the terminal without exposing a web-based admin interface.
+Built with Python, Textual, and PyMongo. Fast, secure, no web UI needed.
 
 ## Features
 
-- 👥 Create and manage MongoDB users
-- 🔐 Reset user passwords
-- 🛡️ Grant and revoke roles
-- 📋 Browse users and permissions
-- 🗑️ Delete users safely with confirmation prompts
-- 🌐 Support for local and remote MongoDB deployments
-- 🚀 Lightweight and easy to deploy
-- 🎨 Modern terminal interface powered by Textual
+**Database Management**
+- Browse databases, collections, and documents
+- Create and drop databases
+- View collection stats (document count, size)
+- Query documents with JSON filters
+- Run aggregation pipelines
 
-## Why MongoTUI?
+**User & Role Administration**
+- Create and delete users
+- Reset passwords
+- Grant and revoke roles (built-in role picker)
+- Browse all users and their permissions
 
-MongoDB provides excellent tooling for managing data, but user and role administration often requires working directly with mongosh commands or enterprise tools.
+**Index Management**
+- View indexes with size and key info
+- Create and drop indexes
+- Create search indexes (text & vector search)
+- Vector search support with similarity options
 
-MongoTUI simplifies common administrative tasks through an intuitive terminal interface while keeping operations secure and scriptable.
+**Monitoring**
+- Live performance graphs (connections, ops/s, memory)
+- Server stats (version, uptime, storage engine)
+- Replica set status and member health
 
-Perfect for:
+**UI**
+- Compass-like sidebar with database/collection tree
+- Tabbed content area
+- Formatted document detail view
+- Keyboard-driven with mouse support
+
+## Installation
+
+```bash
+pip install mongotui
+```
+
+## Usage
+
+```bash
+# Interactive — shows connection screen
+mongotui
+
+# Direct connection
+mongotui --uri "mongodb://admin:admin@localhost:27017/?authSource=admin"
+
+# Short form
+mongotui -u "mongodb://admin:admin@localhost:27017/?authSource=admin"
+```
+
+## Quick Start with Docker
+
+```bash
+# Start a local MongoDB instance
+docker compose up -d
+
+# Connect
+mongotui -u "mongodb://admin:admin@localhost:27017/?authSource=admin"
+```
+
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `q` | Quit |
+| `r` | Refresh |
+| `Ctrl+C` | Force quit |
+| `Escape` | Close modal / go back |
+| `Enter` | Select / expand tree node |
+| `Tab` | Switch between panels |
+
+## Tech Stack
+
+- **Python** 3.11+
+- **Textual** — TUI framework
+- **PyMongo** — MongoDB driver
+- **textual-plotext** — Terminal graphs
+
+## Requirements
+
+- Python 3.11+
+- MongoDB 4.4+ (standalone, replica set, or Atlas)
+
+## Perfect For
 
 - Self-hosted MongoDB deployments
 - Internal infrastructure teams
 - DevOps and platform engineers
 - Development and staging environments
 - Secure administration over SSH
+- Environments where Compass can't be installed
 
-## Tech Stack
+## Development
 
-- Python 3.11+
-- Textual
-- PyMongo
-- Rich
+```bash
+git clone https://github.com/DevOpsPack/mongotui.git
+cd mongotui
+pip install -e .
+mongotui
+```
 
-## Status
+## License
 
-🚧 Early development
+[AGPL-3.0](LICENSE)
