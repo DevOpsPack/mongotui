@@ -1,5 +1,9 @@
 # MongoTUI
 
+<p align="center">
+  <img src="assets/logo.png" alt="MongoTUI" width="200">
+</p>
+
 [![PyPI](https://img.shields.io/pypi/v/mongotui)](https://pypi.org/project/mongotui/)
 [![Python](https://img.shields.io/pypi/pyversions/mongotui)](https://pypi.org/project/mongotui/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
