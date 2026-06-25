@@ -1,0 +1,50 @@
+services:
+  mongo1:
+    image: mongo:7
+    network_mode: host
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    volumes:
+      - mongo1_data:/data/db
+    healthcheck:
+      test: mongosh --port 27017 --eval "db.adminCommand('ping')" --quiet
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mongo2:
+    image: mongo:7
+    network_mode: host
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27018"]
+    volumes:
+      - mongo2_data:/data/db
+
+  mongo3:
+    image: mongo:7
+    network_mode: host
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27019"]
+    volumes:
+      - mongo3_data:/data/db
+
+  mongo-init:
+    image: mongo:7
+    network_mode: host
+    depends_on:
+      mongo1:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: >
+      mongosh --port 27017 --eval '
+        rs.initiate({
+          _id: "rs0",
+          members: [
+            { _id: 0, host: "localhost:27017" },
+            { _id: 1, host: "localhost:27018" },
+            { _id: 2, host: "localhost:27019" }
+          ]
+        })
+      '
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:

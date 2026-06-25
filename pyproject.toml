@@ -1,0 +1,21 @@
+[project]
+name = "mongotui"
+version = "0.1.0"
+description = "A modern terminal UI for MongoDB administration"
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=0.50.0",
+    "pymongo>=4.6.0",
+    "rich>=13.0.0",
+    "textual-plotext>=0.2.0",
+]
+
+[project.scripts]
+mongotui = "mongotui.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mongotui*"]
