@@ -1,0 +1,59 @@
+site_name: MongoTUI
+site_url: https://devopspack.github.io/mongotui
+site_description: A modern terminal UI for MongoDB administration
+site_author: DevOpsPack
+repo_url: https://github.com/DevOpsPack/mongotui
+repo_name: DevOpsPack/mongotui
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  palette:
+    - scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+  - Features:
+      - Database Management: features/databases.md
+      - User Administration: features/users.md
+      - Index Management: features/indexes.md
+      - Monitoring: features/monitoring.md
+      - Aggregation: features/aggregation.md
+  - Reference:
+      - Keyboard Shortcuts: reference/shortcuts.md
+      - Configuration: reference/configuration.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
