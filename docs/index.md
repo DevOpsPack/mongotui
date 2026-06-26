@@ -11,6 +11,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/mongotui)](https://pypi.org/project/mongotui/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Downloads](https://img.shields.io/pypi/dm/mongotui)](https://pypi.org/project/mongotui/)
+[![GitHub Stars](https://img.shields.io/github/stars/DevOpsPack/mongotui?style=social)](https://github.com/DevOpsPack/mongotui)
 
 ## What is MongoTUI?
 

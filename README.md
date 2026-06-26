@@ -9,6 +9,7 @@
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![GitHub release](https://img.shields.io/github/v/release/DevOpsPack/mongotui)](https://github.com/DevOpsPack/mongotui/releases)
 [![Downloads](https://img.shields.io/pypi/dm/mongotui)](https://pypi.org/project/mongotui/)
+[![GitHub Stars](https://img.shields.io/github/stars/DevOpsPack/mongotui?style=social)](https://github.com/DevOpsPack/mongotui)
 
 A modern terminal user interface for MongoDB administration — like Compass, but for your terminal.
 
