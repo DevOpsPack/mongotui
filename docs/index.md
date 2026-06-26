@@ -60,3 +60,4 @@ mongotui -u "mongodb://admin:admin@localhost:27017/?authSource=admin"
 | User management UI | ✅ | ✅ | ❌ |
 | Live monitoring | ✅ | ✅ | ❌ |
 | Lightweight | ✅ | ❌ | ✅ |
+
